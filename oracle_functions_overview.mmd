@@ -1,0 +1,53 @@
+%% oracle_functions_overview.mmd
+%% Mermaid mindmap: Oracle functions overview
+%% Based on the requested scope (문자/숫자/날짜/형변환 함수)
+
+mindmap
+  root((Oracle Functions))
+    문자 함수 (Character)
+      "UPPER / LOWER / INITCAP — 대문자/소문자/단어 첫 글자 대문자"
+        "예: UPPER('scott') → 'SCOTT'"
+      "LENGTH — 문자열 길이"
+        "예: LENGTH('KOREA') → 5"
+      "SUBSTR(text, start[, len]) — 부분 문자열 추출"
+        "예: SUBSTR('ORACLE', 2, 3) → 'RAC'"
+      "INSTR(text, pattern[, pos[, occ]]) — 위치 찾기"
+        "예: INSTR('SALES', 'A') → 2"
+      "REPLACE(text, search[, repl]) — 문자열 치환"
+        "예: REPLACE('010-1234-5678','-','') → '01012345678'"
+      "LPAD(text, len[, pad]) / RPAD(text, len[, pad]) — 채우기"
+        "예: LPAD('90', 3, '0') → '090'"
+      "CONCAT(a, b) — 문자열 결합 (||와 유사)"
+        "예: CONCAT('HELLO', ' WORLD') → 'HELLO WORLD'"
+      "TRIM / LTRIM / RTRIM — 공백/문자 제거"
+        "예: TRIM('  HI  ') → 'HI'"
+    숫자 함수 (Number)
+      "ROUND(n[, i]) — 반올림"
+        "예: ROUND(123.456, 2) → 123.46"
+      "TRUNC(n[, i]) — 버림"
+        "예: TRUNC(123.456, 2) → 123.45"
+      "CEIL(n) — 올림, FLOOR(n) — 내림"
+        "예: CEIL(3.14) → 4 / FLOOR(3.14) → 3"
+      "MOD(m, n) — 나머지"
+        "예: MOD(10, 3) → 1"
+    날짜 함수 (Date)
+      "ADD_MONTHS(d, n) — n개월 더하기/빼기"
+        "예: ADD_MONTHS(DATE '2025-08-01', 3) → 2025-11-01"
+      "MONTHS_BETWEEN(d1, d2) — 개월 수 차이"
+        "예: MONTHS_BETWEEN(DATE '2025-08-01', DATE '2025-05-01') → 3"
+      "NEXT_DAY(d, '요일') — 다음 해당 요일"
+        "예: NEXT_DAY(SYSDATE, 'FRIDAY')"
+      "LAST_DAY(d) — 해당 달의 마지막 날"
+        "예: LAST_DAY(DATE '2025-02-10') → 2025-02-28"
+      "ROUND(d[, fmt]) — 날짜 반올림"
+        "예: ROUND(DATE '2025-08-16','MONTH') → 2025-09-01"
+      "TRUNC(d[, fmt]) — 날짜 절사"
+        "예: TRUNC(DATE '2025-08-16','MONTH') → 2025-08-01"
+    형 변환 함수 (Conversion)
+      "TO_CHAR(date|number[, fmt]) — 문자로 변환"
+        "예(날짜): TO_CHAR(SYSDATE,'YYYY-MM-DD')"
+        "예(숫자): TO_CHAR(12345,'999,999') → ' 12,345'"
+      "TO_NUMBER(char[, fmt]) — 숫자로 변환"
+        "예: TO_NUMBER('1,234','9,999') → 1234"
+      "TO_DATE(char[, fmt]) — 날짜로 변환"
+        "예: TO_DATE('2025-08-01','YYYY-MM-DD')"
